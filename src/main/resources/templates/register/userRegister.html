@@ -60,11 +60,19 @@
 
 });
 </script>
+<style type="text/css">
+	#v1{
+  	  position: absolute;
+  	  left:50%;
+  	  top:50%;
+   	  transform: translate(-50%, -50%);
+}
+</style>
 
 </head>
 <body>
 
-	<div>
+	<div id="v1">
 		<form action="addUser" method="post" class="registerForm">
 			<table>
 				<tr>
@@ -74,7 +82,7 @@
 				</tr>
 				<tr>
 					<td>用户名：</td>
-					<td><input type="text" name="user" id="user" placeholder="设置你的账号" required="required"/></td>
+					<td><input type="text" name="user" id="user" placeholder="设置你的昵称" required="required"/></td>
 					<td><span id = "userCheck" class="bg-danger"></span></td>
 				</tr>
 				<tr>
@@ -90,7 +98,7 @@
 				<tr>
 					<td><input type="hidden" name="rid" value="2"/></td>
 					<td><input type="submit" class="btn btn-primary" value="注册" /></td>
-					<td></td>
+					<td><a href="login">去登录</a></td>
 				</tr>
 			</table>
 		</form>

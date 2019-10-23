@@ -1,6 +1,6 @@
 package com.entor.service;
 
-import com.entor.entity.Classroom;
+import com.entor.entity.ClassroomDetails;
 import com.baomidou.mybatisplus.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.service.IService;
  * @author lichaohua
  * @since 2019-10-23
  */
-public interface IClassroomService extends IService<Classroom> {
+public interface IClassroomDetailsService extends IService<ClassroomDetails> {
 	
 }

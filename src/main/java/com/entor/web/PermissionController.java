@@ -1,9 +1,6 @@
 package com.entor.web;
 
-
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
 
 /**
  * <p>
@@ -13,8 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author lichaohua
  * @since 2019-10-22
  */
-@RestController
-@RequestMapping("/permission")
+@Controller
 public class PermissionController {
 	
 }

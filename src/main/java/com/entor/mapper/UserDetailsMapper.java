@@ -3,6 +3,7 @@ package com.entor.mapper;
 import com.entor.entity.UserDetails;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 
@@ -16,5 +17,12 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
  */
 @Mapper
 public interface UserDetailsMapper extends BaseMapper<UserDetails> {
-
+	
+	/**
+	 * 获取用户的最后次登录详情
+	 * @param uid
+	 * @return
+	 */
+	@Select("SELECT * FROM user_details where uid=#{uid} and id=(SELECT MAX(id) FROM user_details WHERE uid=#{uid})")
+	public UserDetails queryLastUserD(int uid);
 }

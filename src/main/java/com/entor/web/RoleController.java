@@ -1,6 +1,7 @@
 package com.entor.web;
 
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
@@ -13,8 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author lichaohua
  * @since 2019-10-22
  */
-@RestController
-@RequestMapping("/role")
+@Controller
 public class RoleController {
 	
 }

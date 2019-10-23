@@ -1,8 +1,6 @@
 package com.entor.web;
 
-
 import org.springframework.stereotype.Controller;
-
 
 /**
  * <p>
@@ -13,6 +11,6 @@ import org.springframework.stereotype.Controller;
  * @since 2019-10-23
  */
 @Controller
-public class ClassroomController {
+public class ClassroomDetailsController {
 	
 }
