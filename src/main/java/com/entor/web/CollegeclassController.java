@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.entor.entity.Collegeclass;
@@ -42,5 +43,39 @@ public class CollegeclassController {
 		model.addAttribute("list2", list);
 		return "class/collegeClass";
 	}
+	
+	//删除学院
+	@RequestMapping("/deleteCollege")
+	public String deleteCollege(HttpServletRequest request) {
+		String name = request.getParameter("Cname");
+		collegeclassService.deleteCollege(name);
+		return "redirect:queryCollege";
+	}
+	// 修改学院
+	@RequestMapping("/updateCollege")
+	public String updateCollege(Collegeclass collegeclass) {
+		collegeclassService.updateCollege(collegeclass);
+		return "redirect:queryCollege";
+	}
+	//添加班级
+	@RequestMapping("/addCClass")
+	public String addClass(Collegeclass collegeclass) {
+		collegeclassService.addClass(collegeclass);
+		return "redirect:queryClass";
+	}
+	//删除班级
+	@RequestMapping("/deleteCClass")
+	public String deleteClass(int id,HttpServletRequest request) {
+		id = Integer.parseInt(request.getParameter("id"));
+		collegeclassService.deleteClass(id);
+		return "redirect:queryClass";
+	}
+	//修改班级
+	@RequestMapping("/updateCClass")
+	public String updateClass(Collegeclass collegeclass) {
+		collegeclassService.updateClass(collegeclass);
+		return "redirect:queryClass";
+	}
+	
 	
 }

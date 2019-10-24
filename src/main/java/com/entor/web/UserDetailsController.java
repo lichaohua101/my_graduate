@@ -27,24 +27,24 @@ public class UserDetailsController {
 	@RequestMapping("/addUserD")
 	public String addUserD(int uid) {
 		userDetailsService.addUserD(uid);
-		return "";
+		return "mistake";
 	}
 	//获取用户的最后次登录详情
 	@RequestMapping("/queryLastUserD")
 	public String queryLastUserD(int uid) {
 		UserDetails userDetails = userDetailsService.queryLastUserD(uid);
-		return "";
+		return "mistake";
 	}
 	//修改 用户登录详情
 	@RequestMapping("/updateLastUserD")
 	public String updateLastUserD(UserDetails userDetails) {
 		userDetailsService.updateLastUserD(userDetails);
-		return "";
+		return "mistake";
 	}
 	//删除一个用户的 登录详情
 	@RequestMapping("/deleteUserDById")
 	public String deleteUserDById(int id) {
 		userDetailsService.deleteUserDById(id);
-		return "";
+		return "mistake";
 	}
 }

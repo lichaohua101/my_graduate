@@ -21,6 +21,9 @@
      	<table>
      		<tr th:each="c: ${list1}">
      			<td><a th:text="${c.college}" th:href='@{/queryClass(collegeName=${(c.college)})}'></a></td>
+     			<td><a th:href='@{/deleteCollege(Cname=${(c.college)})}'>删除</a>|<a href="#">修改</a></td>
+     			<!-- <a th:href='@{/deleteUserById(id=${(u.id)})}'>删除</a> -->
+     			
      		</tr>
      	</table>
     </div>
@@ -30,12 +33,23 @@
      		<tr th:each="c: ${list2}">
 				<!-- <td th:text="${c.id}"></td> -->
      			<td th:text="${c.college}"></td>
-     			<td><a th:text="${c.className}" href="#"></a></td>
+     			<td><a th:text="${c.className}" href="queryAllClass"></a></td>
      			<td th:text="${c.teacher}"></td>
-     			
+     			<td><a th:href='@{/deleteCClass(id=${(c.id)})}'>删除</a>|<a href="#">修改</a></td>
      		</tr>
      	</table>
     </div>
-
+    
+    <div id="v2">
+		<form action="addCClass" method="post">
+			学院：<input type="text" name="college"/>
+			班级：<input type="text" name="className"/>
+			老师：<input type="text" name="teacher"/>
+			<input type="submit" value="添加班级"/>&nbsp;&nbsp;&nbsp;&nbsp;
+		</form>
+	</div>
+	
+	
+	
 </body>
 </html>

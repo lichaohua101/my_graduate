@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 
@@ -33,4 +34,11 @@ public interface CollegeclassMapper extends BaseMapper<Collegeclass> {
 	 */
 	@Select("SELECT * FROM collegeclass where  college = #{college} ")
 	public List<Collegeclass> queryClass(String college);
+	/**
+	 * 修改学院
+	 * @param before
+	 * @param college
+	 */
+	@Update("update collegeclass set college = #{college} where college = #{before}  ")
+	public void updateCollege(String before, String college);
 }
