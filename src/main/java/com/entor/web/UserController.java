@@ -142,5 +142,10 @@ public class UserController {
 			return "redirect:/classStudents";
 		}
 	}
+	//修改用户
+	@RequestMapping("/updateUser")
+	public String updateUser() {
+		return "";
+	}
 
 }
